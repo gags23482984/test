@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Vertical height 100*/
+  margin: 0;
+  transition: background 0.2s linear; /* for the transition to be smooth*/
+}
+
+body.dark {
+  background-color: #292C35;
+}
+
+body.dark p {
+  color: #fff;
+}
+
+.para {
+  margin: 80px;
+}
+
+/* For the toggle label*/
+.label {
+  background-color: #111;
+  display: flex;
+  align-items: center; /* align to center wrt the outer oval*/
+  justify-content: space-between;/*space btw two fa icons*/
+  border-radius: 50px;
+  position: relative; /* to parent*/
+  padding: 5px;
+  height: 26px;
+  width: 50px;
+  transform: scale(1.5);
+}
+
+.checkbox{
+  opacity: 0; /*To hide checkbox from the page*/
+  position: absolute;
+}
+
+.ball {
+  background-color: #fff;
+  position: absolute;
+  border-radius: 50px;
+  height: 22px;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  transition: transform 0.2s linear; /*for ball to slide not to jump*/
+}
+
+.checkbox:checked + .label .ball /*Target the input first then the label then ball*/
+{
+  transform: translateX(24px);
+}
+
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+div:hover{
+  cursor: pointer;
+}
